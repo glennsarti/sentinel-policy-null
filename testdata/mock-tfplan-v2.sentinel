@@ -1,0 +1,563 @@
+terraform_version = "1.1.6"
+
+planned_values = {
+	"outputs": {},
+	"resources": {
+		"null_resource.empty[\"null1\"]": {
+			"address":        "null_resource.empty[\"null1\"]",
+			"depends_on":     [],
+			"deposed_key":    "",
+			"index":          "null1",
+			"mode":           "managed",
+			"module_address": "",
+			"name":           "empty",
+			"provider_name":  "registry.terraform.io/hashicorp/null",
+			"tainted":        false,
+			"type":           "null_resource",
+			"values": {
+				"id":       "1008964282564950311",
+				"triggers": null,
+			},
+		},
+		"null_resource.empty[\"null2\"]": {
+			"address":        "null_resource.empty[\"null2\"]",
+			"depends_on":     [],
+			"deposed_key":    "",
+			"index":          "null2",
+			"mode":           "managed",
+			"module_address": "",
+			"name":           "empty",
+			"provider_name":  "registry.terraform.io/hashicorp/null",
+			"tainted":        false,
+			"type":           "null_resource",
+			"values": {
+				"id":       "7444355725083053611",
+				"triggers": null,
+			},
+		},
+		"null_resource.empty[\"null3\"]": {
+			"address":        "null_resource.empty[\"null3\"]",
+			"depends_on":     [],
+			"deposed_key":    "",
+			"index":          "null3",
+			"mode":           "managed",
+			"module_address": "",
+			"name":           "empty",
+			"provider_name":  "registry.terraform.io/hashicorp/null",
+			"tainted":        false,
+			"type":           "null_resource",
+			"values": {
+				"id":       "1023581757134027749",
+				"triggers": null,
+			},
+		},
+		"null_resource.empty[\"null4\"]": {
+			"address":        "null_resource.empty[\"null4\"]",
+			"depends_on":     [],
+			"deposed_key":    "",
+			"index":          "null4",
+			"mode":           "managed",
+			"module_address": "",
+			"name":           "empty",
+			"provider_name":  "registry.terraform.io/hashicorp/null",
+			"tainted":        false,
+			"type":           "null_resource",
+			"values": {
+				"id":       "4373512741768283737",
+				"triggers": null,
+			},
+		},
+	},
+}
+
+variables = {
+	"bunch_of_resources": {
+		"name": "bunch_of_resources",
+		"value": [
+			"null1",
+			"null2",
+			"null3",
+			"null4",
+		],
+	},
+}
+
+resource_changes = {
+	"null_resource.empty[\"null1\"]": {
+		"address": "null_resource.empty[\"null1\"]",
+		"change": {
+			"actions": [
+				"no-op",
+			],
+			"after": {
+				"id":       "1008964282564950311",
+				"triggers": null,
+			},
+			"after_unknown": {},
+			"before": {
+				"id":       "1008964282564950311",
+				"triggers": null,
+			},
+		},
+		"deposed":        "",
+		"index":          "null1",
+		"mode":           "managed",
+		"module_address": "",
+		"name":           "empty",
+		"provider_name":  "registry.terraform.io/hashicorp/null",
+		"type":           "null_resource",
+	},
+	"null_resource.empty[\"null2\"]": {
+		"address": "null_resource.empty[\"null2\"]",
+		"change": {
+			"actions": [
+				"no-op",
+			],
+			"after": {
+				"id":       "7444355725083053611",
+				"triggers": null,
+			},
+			"after_unknown": {},
+			"before": {
+				"id":       "7444355725083053611",
+				"triggers": null,
+			},
+		},
+		"deposed":        "",
+		"index":          "null2",
+		"mode":           "managed",
+		"module_address": "",
+		"name":           "empty",
+		"provider_name":  "registry.terraform.io/hashicorp/null",
+		"type":           "null_resource",
+	},
+	"null_resource.empty[\"null3\"]": {
+		"address": "null_resource.empty[\"null3\"]",
+		"change": {
+			"actions": [
+				"no-op",
+			],
+			"after": {
+				"id":       "1023581757134027749",
+				"triggers": null,
+			},
+			"after_unknown": {},
+			"before": {
+				"id":       "1023581757134027749",
+				"triggers": null,
+			},
+		},
+		"deposed":        "",
+		"index":          "null3",
+		"mode":           "managed",
+		"module_address": "",
+		"name":           "empty",
+		"provider_name":  "registry.terraform.io/hashicorp/null",
+		"type":           "null_resource",
+	},
+	"null_resource.empty[\"null4\"]": {
+		"address": "null_resource.empty[\"null4\"]",
+		"change": {
+			"actions": [
+				"no-op",
+			],
+			"after": {
+				"id":       "4373512741768283737",
+				"triggers": null,
+			},
+			"after_unknown": {},
+			"before": {
+				"id":       "4373512741768283737",
+				"triggers": null,
+			},
+		},
+		"deposed":        "",
+		"index":          "null4",
+		"mode":           "managed",
+		"module_address": "",
+		"name":           "empty",
+		"provider_name":  "registry.terraform.io/hashicorp/null",
+		"type":           "null_resource",
+	},
+}
+
+output_changes = {}
+
+raw = {
+	"configuration": {
+		"root_module": {
+			"module_calls": {
+				"subnets": {
+					"expressions": {
+						"base_cidr_block": {
+							"constant_value": "10.0.0.0/8",
+						},
+						"networks": {
+							"constant_value": [
+								{
+									"name":     "foo",
+									"new_bits": 8,
+								},
+							],
+						},
+					},
+					"module": {
+						"outputs": {
+							"base_cidr_block": {
+								"description": "Echoes back the base_cidr_block input variable value, for convenience if passing the result of this module elsewhere as an object.",
+								"expression": {
+									"references": [
+										"var.base_cidr_block",
+									],
+								},
+							},
+							"network_cidr_blocks": {
+								"description": "A map from network names to allocated address prefixes in CIDR notation.",
+								"expression": {
+									"references": [
+										"local.addrs_by_name",
+									],
+								},
+							},
+							"networks": {
+								"description": "A list of objects corresponding to each of the objects in the input variable 'networks', each extended with a new attribute 'cidr_block' giving the network's allocated address prefix.",
+								"expression": {
+									"references": [
+										"local.network_objs",
+									],
+								},
+							},
+						},
+						"variables": {
+							"base_cidr_block": {
+								"description": "A network address prefix in CIDR notation that all of the requested subnetwork prefixes will be allocated within.",
+							},
+							"networks": {
+								"description": "A list of objects describing requested subnetwork prefixes. new_bits is the number of additional network prefix bits to add, in addition to the existing prefix on base_cidr_block.",
+							},
+						},
+					},
+					"source":             "hashicorp/subnets/cidr",
+					"version_constraint": "~> 1.0.0",
+				},
+				"subnets2": {
+					"expressions": {
+						"base_cidr_block": {
+							"constant_value": "10.0.0.0/8",
+						},
+						"networks": {
+							"constant_value": [
+								{
+									"name":     "foo",
+									"new_bits": 8,
+								},
+							],
+						},
+					},
+					"module": {
+						"outputs": {
+							"base_cidr_block": {
+								"description": "Echoes back the base_cidr_block input variable value, for convenience if passing the result of this module elsewhere as an object.",
+								"expression": {
+									"references": [
+										"var.base_cidr_block",
+									],
+								},
+							},
+							"network_cidr_blocks": {
+								"description": "A map from network names to allocated address prefixes in CIDR notation.",
+								"expression": {
+									"references": [
+										"local.addrs_by_name",
+									],
+								},
+							},
+							"networks": {
+								"description": "A list of objects corresponding to each of the objects in the input variable 'networks', each extended with a new attribute 'cidr_block' giving the network's allocated address prefix.",
+								"expression": {
+									"references": [
+										"local.network_objs",
+									],
+								},
+							},
+						},
+						"variables": {
+							"base_cidr_block": {
+								"description": "A network address prefix in CIDR notation that all of the requested subnetwork prefixes will be allocated within.",
+							},
+							"networks": {
+								"description": "A list of objects describing requested subnetwork prefixes. new_bits is the number of additional network prefix bits to add, in addition to the existing prefix on base_cidr_block.",
+							},
+						},
+					},
+					"source":             "hashicorp/subnets/cidr",
+					"version_constraint": "~> 1.0.0",
+				},
+			},
+			"resources": [
+				{
+					"address": "null_resource.empty",
+					"for_each_expression": {
+						"references": [
+							"var.bunch_of_resources",
+						],
+					},
+					"mode":                "managed",
+					"name":                "empty",
+					"provider_config_key": "null",
+					"schema_version":      0,
+					"type":                "null_resource",
+				},
+			],
+			"variables": {
+				"bunch_of_resources": {
+					"default": [
+						"null1",
+						"null2",
+						"null3",
+						"null4",
+					],
+					"description": "A bunch of names",
+				},
+			},
+		},
+	},
+	"format_version": "1.0",
+	"planned_values": {
+		"root_module": {
+			"resources": [
+				{
+					"address":          "null_resource.empty[\"null1\"]",
+					"index":            "null1",
+					"mode":             "managed",
+					"name":             "empty",
+					"provider_name":    "registry.terraform.io/hashicorp/null",
+					"schema_version":   0,
+					"sensitive_values": {},
+					"type":             "null_resource",
+					"values": {
+						"id":       "1008964282564950311",
+						"triggers": null,
+					},
+				},
+				{
+					"address":          "null_resource.empty[\"null2\"]",
+					"index":            "null2",
+					"mode":             "managed",
+					"name":             "empty",
+					"provider_name":    "registry.terraform.io/hashicorp/null",
+					"schema_version":   0,
+					"sensitive_values": {},
+					"type":             "null_resource",
+					"values": {
+						"id":       "7444355725083053611",
+						"triggers": null,
+					},
+				},
+				{
+					"address":          "null_resource.empty[\"null3\"]",
+					"index":            "null3",
+					"mode":             "managed",
+					"name":             "empty",
+					"provider_name":    "registry.terraform.io/hashicorp/null",
+					"schema_version":   0,
+					"sensitive_values": {},
+					"type":             "null_resource",
+					"values": {
+						"id":       "1023581757134027749",
+						"triggers": null,
+					},
+				},
+				{
+					"address":          "null_resource.empty[\"null4\"]",
+					"index":            "null4",
+					"mode":             "managed",
+					"name":             "empty",
+					"provider_name":    "registry.terraform.io/hashicorp/null",
+					"schema_version":   0,
+					"sensitive_values": {},
+					"type":             "null_resource",
+					"values": {
+						"id":       "4373512741768283737",
+						"triggers": null,
+					},
+				},
+			],
+		},
+	},
+	"prior_state": {
+		"format_version":    "1.0",
+		"terraform_version": "1.1.6",
+		"values": {
+			"root_module": {
+				"resources": [
+					{
+						"address":          "null_resource.empty[\"null1\"]",
+						"index":            "null1",
+						"mode":             "managed",
+						"name":             "empty",
+						"provider_name":    "registry.terraform.io/hashicorp/null",
+						"schema_version":   0,
+						"sensitive_values": {},
+						"type":             "null_resource",
+						"values": {
+							"id":       "1008964282564950311",
+							"triggers": null,
+						},
+					},
+					{
+						"address":          "null_resource.empty[\"null2\"]",
+						"index":            "null2",
+						"mode":             "managed",
+						"name":             "empty",
+						"provider_name":    "registry.terraform.io/hashicorp/null",
+						"schema_version":   0,
+						"sensitive_values": {},
+						"type":             "null_resource",
+						"values": {
+							"id":       "7444355725083053611",
+							"triggers": null,
+						},
+					},
+					{
+						"address":          "null_resource.empty[\"null3\"]",
+						"index":            "null3",
+						"mode":             "managed",
+						"name":             "empty",
+						"provider_name":    "registry.terraform.io/hashicorp/null",
+						"schema_version":   0,
+						"sensitive_values": {},
+						"type":             "null_resource",
+						"values": {
+							"id":       "1023581757134027749",
+							"triggers": null,
+						},
+					},
+					{
+						"address":          "null_resource.empty[\"null4\"]",
+						"index":            "null4",
+						"mode":             "managed",
+						"name":             "empty",
+						"provider_name":    "registry.terraform.io/hashicorp/null",
+						"schema_version":   0,
+						"sensitive_values": {},
+						"type":             "null_resource",
+						"values": {
+							"id":       "4373512741768283737",
+							"triggers": null,
+						},
+					},
+				],
+			},
+		},
+	},
+	"resource_changes": [
+		{
+			"address": "null_resource.empty[\"null1\"]",
+			"change": {
+				"actions": [
+					"no-op",
+				],
+				"after": {
+					"id":       "1008964282564950311",
+					"triggers": null,
+				},
+				"after_sensitive": {},
+				"after_unknown":   {},
+				"before": {
+					"id":       "1008964282564950311",
+					"triggers": null,
+				},
+				"before_sensitive": {},
+			},
+			"index":         "null1",
+			"mode":          "managed",
+			"name":          "empty",
+			"provider_name": "registry.terraform.io/hashicorp/null",
+			"type":          "null_resource",
+		},
+		{
+			"address": "null_resource.empty[\"null2\"]",
+			"change": {
+				"actions": [
+					"no-op",
+				],
+				"after": {
+					"id":       "7444355725083053611",
+					"triggers": null,
+				},
+				"after_sensitive": {},
+				"after_unknown":   {},
+				"before": {
+					"id":       "7444355725083053611",
+					"triggers": null,
+				},
+				"before_sensitive": {},
+			},
+			"index":         "null2",
+			"mode":          "managed",
+			"name":          "empty",
+			"provider_name": "registry.terraform.io/hashicorp/null",
+			"type":          "null_resource",
+		},
+		{
+			"address": "null_resource.empty[\"null3\"]",
+			"change": {
+				"actions": [
+					"no-op",
+				],
+				"after": {
+					"id":       "1023581757134027749",
+					"triggers": null,
+				},
+				"after_sensitive": {},
+				"after_unknown":   {},
+				"before": {
+					"id":       "1023581757134027749",
+					"triggers": null,
+				},
+				"before_sensitive": {},
+			},
+			"index":         "null3",
+			"mode":          "managed",
+			"name":          "empty",
+			"provider_name": "registry.terraform.io/hashicorp/null",
+			"type":          "null_resource",
+		},
+		{
+			"address": "null_resource.empty[\"null4\"]",
+			"change": {
+				"actions": [
+					"no-op",
+				],
+				"after": {
+					"id":       "4373512741768283737",
+					"triggers": null,
+				},
+				"after_sensitive": {},
+				"after_unknown":   {},
+				"before": {
+					"id":       "4373512741768283737",
+					"triggers": null,
+				},
+				"before_sensitive": {},
+			},
+			"index":         "null4",
+			"mode":          "managed",
+			"name":          "empty",
+			"provider_name": "registry.terraform.io/hashicorp/null",
+			"type":          "null_resource",
+		},
+	],
+	"terraform_version": "1.1.6",
+	"variables": {
+		"bunch_of_resources": {
+			"value": [
+				"null1",
+				"null2",
+				"null3",
+				"null4",
+			],
+		},
+	},
+}

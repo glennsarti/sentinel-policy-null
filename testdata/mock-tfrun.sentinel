@@ -1,0 +1,33 @@
+id = "run-4HfBEDEwbnWTCPsZ"
+created_at = "2022-04-04T01:51:01.322Z"
+message = "Do it"
+commit_sha = undefined
+speculative = false
+is_destroy = false
+refresh = true
+refresh_only = false
+replace_addrs = null
+target_addrs = null
+
+variables = {}
+
+organization = {
+	"name": "hashicorp",
+}
+
+workspace = {
+	"auto_apply":        false,
+	"created_at":        "2022-03-16T08:05:59.751Z",
+	"description":       null,
+	"id":                "ws-3junXN7pTmgbqpSH",
+	"name":              "cli-workspace",
+	"tags":              [],
+	"vcs_repo":          null,
+	"working_directory": "",
+}
+
+cost_estimate = {
+	"delta_monthly_cost":    "0.0",
+	"prior_monthly_cost":    "0.0",
+	"proposed_monthly_cost": "0.0",
+}

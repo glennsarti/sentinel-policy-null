@@ -1,0 +1,17 @@
+# This policy checks how many Null Resources are in a run
+
+import "tfplan/v2" as tfplan
+
+param max_resources default 3
+
+null_resources = filter tfplan.planned_values.resources as _, resource {
+  resource.type == "null_resource"
+}
+
+print("Max Resources", max_resources)
+print("Num Resources", length(null_resources))
+
+# This rule checks how many Null Resources are in a run
+main = rule {
+	length(null_resources) <= max_resources
+}

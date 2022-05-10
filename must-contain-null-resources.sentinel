@@ -1,0 +1,12 @@
+# This policy checks that there must be at least 1 null resource
+
+import "tfplan/v2" as tfplan
+
+null_resources = filter tfplan.planned_values.resources as _, resource {
+  resource.type == "null_resource"
+}
+
+# This rule checks there is at least one null resource
+main = rule {
+	length(null_resources) > 0
+}

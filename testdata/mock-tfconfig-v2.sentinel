@@ -1,0 +1,194 @@
+import "strings"
+
+providers = {}
+
+resources = {
+	"null_resource.empty": {
+		"address":    "null_resource.empty",
+		"config":     {},
+		"count":      {},
+		"depends_on": [],
+		"for_each": {
+			"references": [
+				"var.bunch_of_resources",
+			],
+		},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "empty",
+		"provider_config_key": "null",
+		"provisioners":        [],
+		"type":                "null_resource",
+	},
+}
+
+provisioners = {}
+
+variables = {
+	"bunch_of_resources": {
+		"default": [
+			"null1",
+			"null2",
+			"null3",
+			"null4",
+		],
+		"description":    "A bunch of names",
+		"module_address": "",
+		"name":           "bunch_of_resources",
+	},
+	"module.subnets2:base_cidr_block": {
+		"default":        null,
+		"description":    "A network address prefix in CIDR notation that all of the requested subnetwork prefixes will be allocated within.",
+		"module_address": "module.subnets2",
+		"name":           "base_cidr_block",
+	},
+	"module.subnets2:networks": {
+		"default":        null,
+		"description":    "A list of objects describing requested subnetwork prefixes. new_bits is the number of additional network prefix bits to add, in addition to the existing prefix on base_cidr_block.",
+		"module_address": "module.subnets2",
+		"name":           "networks",
+	},
+	"module.subnets:base_cidr_block": {
+		"default":        null,
+		"description":    "A network address prefix in CIDR notation that all of the requested subnetwork prefixes will be allocated within.",
+		"module_address": "module.subnets",
+		"name":           "base_cidr_block",
+	},
+	"module.subnets:networks": {
+		"default":        null,
+		"description":    "A list of objects describing requested subnetwork prefixes. new_bits is the number of additional network prefix bits to add, in addition to the existing prefix on base_cidr_block.",
+		"module_address": "module.subnets",
+		"name":           "networks",
+	},
+}
+
+outputs = {
+	"module.subnets2:base_cidr_block": {
+		"depends_on":     [],
+		"description":    "Echoes back the base_cidr_block input variable value, for convenience if passing the result of this module elsewhere as an object.",
+		"module_address": "module.subnets2",
+		"name":           "base_cidr_block",
+		"sensitive":      false,
+		"value": {
+			"references": [
+				"var.base_cidr_block",
+			],
+		},
+	},
+	"module.subnets2:network_cidr_blocks": {
+		"depends_on":     [],
+		"description":    "A map from network names to allocated address prefixes in CIDR notation.",
+		"module_address": "module.subnets2",
+		"name":           "network_cidr_blocks",
+		"sensitive":      false,
+		"value": {
+			"references": [
+				"local.addrs_by_name",
+			],
+		},
+	},
+	"module.subnets2:networks": {
+		"depends_on":     [],
+		"description":    "A list of objects corresponding to each of the objects in the input variable 'networks', each extended with a new attribute 'cidr_block' giving the network's allocated address prefix.",
+		"module_address": "module.subnets2",
+		"name":           "networks",
+		"sensitive":      false,
+		"value": {
+			"references": [
+				"local.network_objs",
+			],
+		},
+	},
+	"module.subnets:base_cidr_block": {
+		"depends_on":     [],
+		"description":    "Echoes back the base_cidr_block input variable value, for convenience if passing the result of this module elsewhere as an object.",
+		"module_address": "module.subnets",
+		"name":           "base_cidr_block",
+		"sensitive":      false,
+		"value": {
+			"references": [
+				"var.base_cidr_block",
+			],
+		},
+	},
+	"module.subnets:network_cidr_blocks": {
+		"depends_on":     [],
+		"description":    "A map from network names to allocated address prefixes in CIDR notation.",
+		"module_address": "module.subnets",
+		"name":           "network_cidr_blocks",
+		"sensitive":      false,
+		"value": {
+			"references": [
+				"local.addrs_by_name",
+			],
+		},
+	},
+	"module.subnets:networks": {
+		"depends_on":     [],
+		"description":    "A list of objects corresponding to each of the objects in the input variable 'networks', each extended with a new attribute 'cidr_block' giving the network's allocated address prefix.",
+		"module_address": "module.subnets",
+		"name":           "networks",
+		"sensitive":      false,
+		"value": {
+			"references": [
+				"local.network_objs",
+			],
+		},
+	},
+}
+
+module_calls = {
+	"subnets": {
+		"config": {
+			"base_cidr_block": {
+				"constant_value": "10.0.0.0/8",
+			},
+			"networks": {
+				"constant_value": [
+					{
+						"name":     "foo",
+						"new_bits": 8,
+					},
+				],
+			},
+		},
+		"count":              {},
+		"depends_on":         [],
+		"for_each":           {},
+		"module_address":     "",
+		"name":               "subnets",
+		"source":             "hashicorp/subnets/cidr",
+		"version_constraint": "~> 1.0.0",
+	},
+	"subnets2": {
+		"config": {
+			"base_cidr_block": {
+				"constant_value": "10.0.0.0/8",
+			},
+			"networks": {
+				"constant_value": [
+					{
+						"name":     "foo",
+						"new_bits": 8,
+					},
+				],
+			},
+		},
+		"count":              {},
+		"depends_on":         [],
+		"for_each":           {},
+		"module_address":     "",
+		"name":               "subnets2",
+		"source":             "hashicorp/subnets/cidr",
+		"version_constraint": "~> 1.0.0",
+	},
+}
+
+strip_index = func(addr) {
+	s = strings.split(addr, ".")
+	for s as i, v {
+		s[i] = strings.split(v, "[")[0]
+	}
+
+	return strings.join(s, ".")
+}
