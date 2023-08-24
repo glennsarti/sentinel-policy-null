@@ -1,4 +1,4 @@
-# This policy checks that there must be at least 1 null resource
+# This policy checks that there must be at least 1 null resource  asdasd
 
 import "tfplan/v2" as tfplan
 
