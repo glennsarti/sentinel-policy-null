@@ -1,4 +1,4 @@
-# This policy checks how many Null Resources are in a run  Test 2
+# This policy checks how many Null Resources are in a run  Test 3
 
 import "tfplan/v2" as tfplan
 
