@@ -7,3 +7,5 @@ policy "must-contain-null-resources" {
   source            = "./must-contain-null-resources.sentinel"
   enforcement_level = "advisory"
 }
+
+
